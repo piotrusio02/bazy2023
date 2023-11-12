@@ -80,3 +80,59 @@ VALUES
   ('2000','3','bigos','papryczka chilli','1');
 ```
 # zadanie 5
+## 5.1
+```
+INSERT INTO postac (nazwa, rodzaj, data_ur, wiek)
+  VALUES ('Staszek','wiking','1974-03-29','49'),
+  ('Grzesiek','wiking','1972-01-11','51'),
+  ('Krystian','wiking','1970-02-21','53'),
+  ('Wojtek','wiking','1965-03-15','58'),
+  ('Pipkin','wiking','1980-12-26','42');
+```
+## 5.2
+```
+CREATE TABLE statek (
+  nazwa_statku VARCHAR(50) PRIMARY KEY,
+  rodzaj_statku ENUM('Szkuner','Bark','Fregata'),
+  data_wodowania DATE,
+  max_ladownosc INT UNSIGNED);
+```
+## 5.3
+```
+INSERT INTO statek (nazwa_statku, rodzaj_statku, data_wodowania, max_ladownosc) 
+	VALUES ('Panna','Bark','1900-06-30','40'),
+	('Niszczyciel','Fregata','1950-05-12','55');
+```
+## 5.4
+```
+ALTER TABLE postac ADD funkcja VARCHAR(40);
+```
+## 5.5
+```
+UPDATE postac 
+  SET funkcja = 'Kapitan'
+  Where nazwa = 'Bjorn';
+```
+## 5.6
+```
+ALTER TABLE postac 
+  ADD nazwa_statku VARCHAR(30);
+ALTER TABLE postac 
+  ADD FOREIGN KEY (nazwa_statku) 
+    REFERENCES statek(nazwa_statku);
+```
+## 5.7
+```
+UPDATE postac SET nazwa_statku = "Niszczyciel" WHERE id_postaci = 1;
+UPDATE postac SET nazwa_statku = "Niszczyciel" WHERE id_postaci = 2;
+UPDATE postac SET nazwa_statku = "Niszczyciel" WHERE id_postaci = 4;
+UPDATE postac SET nazwa_statku = "Panna" WHERE id_postaci > 4;
+```
+## 5.8
+```
+DELETE FROM izba WHERE nazwa_izby = 'spizarnia';
+```
+## 5.9
+```
+DROP TABLE izba;
+```
