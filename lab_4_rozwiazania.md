@@ -54,7 +54,8 @@ CREATE TABLE izba (
 ```
 ## 3.2
 ```sql
-ALTER TABLE izba ADD COLUMN kolor_izby varchar(50) DEFAULT 'czarny' AFTER metraz;
+ALTER TABLE izba ADD COLUMN
+  kolor_izby varchar(50) DEFAULT 'czarny' AFTER metraz;
 ```
 ### 3.3
 ```sql
