@@ -59,7 +59,8 @@ ALTER TABLE izba ADD COLUMN
 ```
 ### 3.3
 ```sql
-INSERT INTO izba (adres_budynku,nazwa_izby,metraz,wlasciciel) VALUES ('ul. Twarda 14','spizarnia','200','1');
+INSERT INTO izba (adres_budynku,nazwa_izby,metraz,wlasciciel)
+  VALUES ('ul. Twarda 14','spizarnia','200','1');
 ```
 # zadanie 4
 ## 4.1
@@ -115,7 +116,7 @@ UPDATE postac
   Where nazwa = 'Bjorn';
 ```
 ## 5.6
-```
+```sql
 ALTER TABLE postac 
   ADD nazwa_statku VARCHAR(30);
 ALTER TABLE postac 
