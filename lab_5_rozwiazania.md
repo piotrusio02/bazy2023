@@ -74,13 +74,25 @@ DELETE FROM marynarz WHERE id_postaci = '4';
 ```sql
 DELETE FROM statek WHERE nazwa_statku IS NOT NULL;
 ```
-##5.3
+##5.4
 ```sql
-
-
-
-
-
+ALTER TABLE postac DROP FOREIGN KEY postac_ibfk_1;
+ALTER TABLE marynarz DROP FOREIGN KEY marynarz_ibfk_1;
+DROP TABLE statek
+```
+##5.5
+```sql
+CREATE TABLE zwierz (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    nazwa VARCHAR(50),
+    wiek INT);
+```
+##5.6
+```sql
+INSERT INTO zwierz(zwierz.nazwa, zwierz.wiek)
+  SELECT postac.nazwa,postac.wiek FROM postac
+    WHERE rodzaj="ptak" OR rodzaj="waz";
+```
 
 
 
